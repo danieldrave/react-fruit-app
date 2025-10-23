@@ -12,10 +12,11 @@ export default function Search({ onSearch }: { onSearch: (query: string) => void
   return (
     <form onSubmit={handleSearch}>
       <input
-        type="text"
-        placeholder="Search fruits..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
+        placeholder="Search fruits..."
+        type="text"
+        required
       />
       <button type="submit">Search</button>
     </form>
