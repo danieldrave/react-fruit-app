@@ -93,6 +93,6 @@ th {
   background-color: #f9f9f9;
 }
 
-tr > td:first-of-type {
-  width: 5%
+tr > td:last-of-type {
+  width: 5%;
 }

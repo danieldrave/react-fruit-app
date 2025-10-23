@@ -16,7 +16,7 @@ export default function Home() {
     order: string;
   }
 
-  const fruits: Fruit[] = db.sort((a, b) => a.id - b.id);
+  const fruits: Fruit[] = db.sort((a, b) => a.name.localeCompare(b.name));
 
   const handleSearchQuery = (query: string) => {
     alert(`Searching for: ${query}`);
@@ -27,13 +27,13 @@ export default function Home() {
       <div className="card">
         <div className={`${styles.card__header} card__header`}>
           <h2>Fruits Catalogue</h2>
+          {/* When you pass a click event as a parameter, both the components need to be client components */}
           <Search onSearch={handleSearchQuery} />
         </div>
         <div className={`card__body ${styles.card__body}`}>
           <table>
             <thead>
               <tr>
-                <th>#</th>
                 <th>Name</th>
                 <th>Details</th>
               </tr>

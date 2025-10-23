@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <header className="py-0-5 px-1 mb-1">
+        <header className="py-0-5 px-1">
           <h1 className="m-0">Fruits App</h1>
           <div className="me">
             Built by

@@ -11,7 +11,6 @@ type FruitParams = {
 export default function Fruit({ data }: { data: FruitParams }) {
   return (
     <tr>
-      <td>{data.id}</td>
       <td>
         <strong>{data.name}</strong>
         <span className="display-block">
