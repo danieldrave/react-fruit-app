@@ -62,7 +62,6 @@ export default function Home() {
         <small>Scroll down to see more!</small>
       </p>
 
-      {/* TODO Convert component to main lists */}
       {fruits.map((fruit: Fruit) => (
         <Fruit key={fruit.id} id={fruit.id} name={fruit.name} />
       ))}
