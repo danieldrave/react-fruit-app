@@ -1,11 +1,10 @@
 'use client';
-import Link from 'next/link';
 
 import db from '../../public/db.json';
 import styles from "./page.module.css";
 
-import Search from './components/Search';
-import Fruit from './components/Fruit';
+import Search from './components/Search/Search';
+import Fruit from './components/Fruit/Fruit';
 
 export default function Home() {
   // TODO Get fruits from API and react to search queries
@@ -41,18 +40,10 @@ export default function Home() {
             </thead>
             <tbody>
               {fruits.map((fruit: Fruit) => (
-                <tr key={fruit.id}>
-                  <td>{fruit.id}</td>
-                  <td>
-                    <strong>{fruit.name}</strong>
-                    <span className="display-block">
-                      { `${fruit.family}, ${fruit.order}, ${fruit.genus}` }
-                    </span>
-                  </td>
-                  <td>
-                    <Link href={`/views/fruits/${fruit.id}`}> Open </Link>
-                  </td>
-                </tr>
+                <Fruit
+                  key={fruit.id}
+                  data={fruit}
+                />
               ))}
             </tbody>
           </table>
@@ -61,10 +52,6 @@ export default function Home() {
       <p className="text-align-center">
         <small>Scroll down to see more!</small>
       </p>
-
-      {fruits.map((fruit: Fruit) => (
-        <Fruit key={fruit.id} id={fruit.id} name={fruit.name} />
-      ))}
     </section>
   );
 }
